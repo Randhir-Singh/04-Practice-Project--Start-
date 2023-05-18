@@ -2,6 +2,7 @@ name: Project deployment
 on: [push, workflow_dispatch]
 env:
   MYSECRET: ${{secrets.SECRET_1}}
+  MYVARIABLE: ${{variables.VARIABLE_1}}
 jobs:
   prebuild-test-job:
     runs-on: Ubuntu-latest
@@ -21,7 +22,7 @@ jobs:
           npm test
           echo "-----"
           echo $MYSECRET
-          echo "my scret is ---" ${{env.MYSECRET}}
+          echo "my variable is ---" $MYVARIABLE
   build-job:
     needs: prebuild-test-job
     runs-on: ubuntu-latest
