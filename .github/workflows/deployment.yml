@@ -1,6 +1,6 @@
 name: Project deployment
 on: workflow_dispatch
-jobs:  
+jobs:
   lint-job:
     runs-on: Ubuntu-latest
     steps:
@@ -8,5 +8,5 @@ jobs:
         uses: actions/checkout@v3
       - name: Install node JS
         uses: actions/setup-node@v3
-          with:
-            node-version: 18
+        with:
+          node-version: 18
