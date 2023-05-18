@@ -1,5 +1,5 @@
 name: Project deployment
-on: workflow_dispatch
+on: [push, workflow_dispatch]
 env:
   MYSECRET: ${{secrets.SECRET_1}}
 jobs:
@@ -19,7 +19,9 @@ jobs:
       - name: run test files
         run: |
           npm test
+          echo "-----"
           echo $MYSECRET
+          echo "my scret is ---" ${{env.MYSECRET}}
   build-job:
     needs: prebuild-test-job
     runs-on: ubuntu-latest
