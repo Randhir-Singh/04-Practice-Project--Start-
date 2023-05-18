@@ -1,7 +1,7 @@
 name: Project deployment
 on: workflow_dispatch
 jobs:
-  lint-job:
+  deploy-job:
     runs-on: Ubuntu-latest
     steps:
       - name: Download code
@@ -11,4 +11,6 @@ jobs:
         with:
           node-version: 18
       - name: Run npm install lib
-        run: npm run install
+        run: npm run npm install
+      - name: execute lint
+        rub: npm run lint
