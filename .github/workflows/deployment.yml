@@ -1,5 +1,7 @@
 name: Project deployment
 on: workflow_dispatch
+env:
+  MYSECRET: ${{SECRET_1}}
 jobs:
   prebuild-test-job:
     runs-on: Ubuntu-latest
@@ -15,7 +17,9 @@ jobs:
       - name: execute lint
         run: npm run lint
       - name: run test files
-        run: npm test
+        run: | 
+             npm test
+             echo ${{MYSECRET}}
   build-job:
     needs: prebuild-test-job
     runs-on: ubuntu-latest
