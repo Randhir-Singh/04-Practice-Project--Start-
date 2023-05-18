@@ -19,7 +19,7 @@ jobs:
       - name: run test files
         run: |
           npm test
-          echo ${{MYSECRET}}
+          echo $MYSECRET
   build-job:
     needs: prebuild-test-job
     runs-on: ubuntu-latest
