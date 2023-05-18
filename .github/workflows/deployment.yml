@@ -17,9 +17,7 @@ jobs:
       - name: run test files
         run: npm test
   build-job:
-    runs-on:  ubuntu-latest
-      steps:
-        - name: execute project build
-          run: npm build
-
-
+    runs-on: ubuntu-latest
+    steps:
+      - name: execute project build
+        run: npm build
