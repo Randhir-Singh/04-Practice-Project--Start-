@@ -1,7 +1,7 @@
 name: Project deployment
 on: workflow_dispatch
 jobs:
-  deploy-job:
+  prebuild-test-job:
     runs-on: Ubuntu-latest
     steps:
       - name: Download code
@@ -16,3 +16,10 @@ jobs:
         run: npm run lint
       - name: run test files
         run: npm test
+  build-job:
+    runs-on:  ubuntu-latest
+      steps:
+        - name: execute project build
+          run: npm build
+
+
