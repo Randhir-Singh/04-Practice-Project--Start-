@@ -13,4 +13,4 @@ jobs:
       - name: Run npm install lib
         run: npm run npm install
       - name: execute lint
-        rub: npm run lint
+        run: npm run lint
