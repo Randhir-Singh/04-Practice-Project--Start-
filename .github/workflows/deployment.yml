@@ -2,7 +2,7 @@ name: Project deployment
 on: [push, workflow_dispatch]
 env:
   MYSECRET: ${{secrets.SECRET_1}}
-  MYVARIABLE: ${{variables.VARIABLE_1}}
+  MYVARIABLE: ${{vars.VARIABLE_1}}
 jobs:
   prebuild-test-job:
     runs-on: Ubuntu-latest
