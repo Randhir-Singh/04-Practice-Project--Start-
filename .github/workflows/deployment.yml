@@ -37,3 +37,9 @@ jobs:
         run: npm ci
       - name: execute project build
         run: npm run build
+      - name: Download build output
+        uses: actions/upload-artifact@v3
+        with:
+          name: build_output
+          path: dist
+        
