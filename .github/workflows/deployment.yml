@@ -42,4 +42,16 @@ jobs:
         with:
           name: build_output
           path: dist
+  deploy-job:
+    needs: build-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get build artifact from build-job
+        uses: actions/download-artifact@v3     
+        with:
+          name: build_output
+      - name: list all contents
+        run: ls
+      - name: deploy
+        run: echo "deployment started"
         
